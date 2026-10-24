@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Komissiya paneli</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><h1>Komissiya paneli</h1><a href="index.html" class="muted">← Imtihon sahifasi</a></header>
+
+  <section id="login" class="card">
+    <h2>Kirish</h2>
+    <label for="pw">Parol</label>
+    <input id="pw" type="password" autocomplete="off">
+    <p id="loginErr" class="fail hidden">Parol noto'g'ri.</p>
+    <div class="row"><span class="muted">Parolni <code>js/admin.js</code> faylida o'zgartiring.</span><button id="btnLogin">Kirish</button></div>
+  </section>
+
+  <section id="panel" class="hidden">
+    <div class="card">
+      <h2>Natijalarni yuklash</h2>
+      <p class="muted">Nomzodlar yuborgan <b>.json</b> fayllarni tanlang (bir nechta tanlash mumkin).</p>
+      <input id="files" type="file" accept=".json,application/json" multiple>
+      <div class="row">
+        <span class="muted" id="count">0 ta nomzod</span>
+        <span><button id="btnCsv" class="ghost">CSV ga eksport</button> <button id="btnClear" class="ghost">Tozalash</button></span>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Nomzod</th><th>Test</th><th>Keys</th><th>Jami</th><th></th></tr></thead>
+        <tbody id="rows"><tr><td colspan="5" class="muted">Hozircha natija yo'q</td></tr></tbody>
+      </table>
+    </div>
+    <div id="detail" class="card hidden" style="margin-top:16px"></div>
+  </section>
+</div>
+<script src="js/questions.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

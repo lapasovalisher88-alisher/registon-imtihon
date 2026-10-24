@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filial rahbari imtihoni</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <img class="logo" src="assets/logo.png" alt="Registon o'quv markazi">
+      <h1 id="examTitle">Filial rahbari imtihoni</h1>
+    </div>
+    <div id="timer" class="timer hidden">00:00</div>
+  </header>
+
+  <!-- 1. Kirish -->
+  <section id="screen-start" class="card">
+    <h2>Xush kelibsiz</h2>
+    <p class="muted" id="intro"></p>
+    <label for="fio">Ism-familiyangiz</label>
+    <input id="fio" type="text" autocomplete="name" placeholder="Masalan: Alisher Karimov">
+    <label for="phone">Telefon raqami</label>
+    <input id="phone" type="tel" autocomplete="tel" placeholder="+998 90 123 45 67">
+    <label for="region">Qaysi hududda filial ochmoqchisiz?</label>
+    <input id="region" type="text" placeholder="Viloyat / shahar">
+    <p id="startErr" class="fail hidden"></p>
+    <div class="row"><span class="muted">Vaqt boshlangach to'xtatib bo'lmaydi.</span><button id="btnStart">Imtihonni boshlash</button></div>
+  </section>
+
+  <!-- 2. Test va keys -->
+  <section id="screen-exam" class="card hidden">
+    <div class="progress"><div id="bar"></div></div>
+    <div id="qBox"></div>
+    <div class="row">
+      <button id="btnPrev" class="ghost">Orqaga</button>
+      <span class="muted" id="counter"></span>
+      <button id="btnNext">Keyingisi</button>
+    </div>
+  </section>
+
+  <!-- 3. Natija -->
+  <section id="screen-result" class="card hidden">
+    <h2>Imtihon yakunlandi</h2>
+    <div id="resultBox"></div>
+    <div id="sendStatus" class="note"></div>
+    <p class="muted">Ochiq keys javoblaringiz komissiya tomonidan alohida baholanadi.</p>
+    <div class="row">
+      <button id="btnRetry" class="hidden">Qayta yuborish</button>
+      <button id="btnRetake" class="ghost hidden">Qaytadan topshirish</button>
+      <button id="btnDownload">Natijani PDF qilib yuklab olish</button>
+    </div>
+  </section>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/logo.js"></script>
+<script src="js/pdf.js"></script>
+<script src="js/config.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
